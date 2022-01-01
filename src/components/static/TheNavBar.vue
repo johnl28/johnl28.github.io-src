@@ -11,11 +11,6 @@ let r = [
     span: "code"
   },
   {
-    text: "Social",
-    to: "/social",
-    span: "public"
-  },
-  {
     text: "About",
     to: "/about",
     span: "help"
@@ -37,10 +32,14 @@ export default {
   methods: {
     Navigate(to) 
     {
+      if (this.currentRoute == to) {
+        return;
+      }
+
       this.currentRoute = to;
       this.$router.push(to);
     }
-  }
+  },
 }
 </script>
 
@@ -53,9 +52,6 @@ export default {
     </span>
     {{route.text}}
   </div>
-  <div class="nav-footer">
-    &copy; Johnl 2022
-  </div>
 </div>
 </template>
 
@@ -65,9 +61,8 @@ export default {
   width: 200px;
   display: flex;
   flex-direction: column;
-  user-select: none;
-  cursor: pointer;
   gap: 3px;
+  height: fit-content;
 }
 
 .nav-footer {
@@ -85,10 +80,12 @@ export default {
   align-items: center;
   justify-content: center;
   font-weight: bold;
-  font-size: 20px;
-  color: rgb(136, 136, 136);
+  font-size: 18px;
+  color: rgb(158, 158, 158);
   padding: 10px;
   border-radius: 15px;
+  user-select: none;
+  cursor: pointer;
 }
 
 .nav-btn span {
@@ -96,12 +93,11 @@ export default {
 }
 
 .nav-btn:hover {
-  outline: solid 1px rgb(134, 163, 255);
+  background: rgb(241, 244, 255);
 }
 
 .btn-active {
-  background-color: rgb(239, 242, 255);
-  outline: solid 1px rgb(134, 163, 255);
-  color: rgb(75, 117, 255);
+  background: rgb(227, 234, 255);
+  color: rgb(0, 0, 0);
 }
 </style>

@@ -7,7 +7,7 @@ export default {
 
 <template>
   <div class="content-404">
-    🤔
+    ( ˘︹˘ )
     <br />
     Page not found 
   </div>
