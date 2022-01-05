@@ -48,12 +48,14 @@ export default {
 
 .router {
   width: 100% !important;
+  min-height: 300px;
 }
 
 .content-box {
   display: flex;
   flex-direction: column;
   min-width: 600px;
+  height: fit-content;
   width: 600px;
 }
 </style>

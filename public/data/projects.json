@@ -4,25 +4,13 @@
 		"title": "OTask - Project & Task Manager",
 		"desc": "SPA for project and task management...",
 		"tags": ["#flask", "#vuejs", "#mariadb", "#redis"],
-		"content": [
-			{
-				"type": "text-box",
-				"data": "A C++ aplication to personalise your windows desktop..."
-			},
-			{
-				"type": "images-box",
-				"data": [	
-					"https://icatcare.org/app/uploads/2018/07/Thinking-of-getting-a-cat.png", 
-					"https://media.wired.co.uk/photos/60c8730fa81eb7f50b44037e/3:2/w_3329,h_2219,c_limit/1521-WIRED-Cat.jpeg",
-					"https://images.theconversation.com/files/350865/original/file-20200803-24-50u91u.jpg?ixlib=rb-1.1.0&q=45&auto=format&w=1200&h=1200.0&fit=crop",
-					"https://ychef.files.bbci.co.uk/976x549/p07ryyyj.jpg"
-					
-				]
-			},
-			{
-				"type": "html-box",
-				"data": "dadawd"
-			}
+		"content": "/otask/page.txt",
+		"slides": [
+			"/data/otask/NDrorAS.png",
+			"/data/otask/5ZGmNvW.png",
+			"/data/otask/eHweZil.png",
+			"/data/otask/Qub0u81.png"
+			
 		]
 	},
 	{ 

@@ -1,20 +1,12 @@
 <script>
-import TextBox from '../components/project/TextBox.vue'
-import Slider from '../components/project/Slider.vue'
-import HTMLBox from '../components/project/HTMLBox.vue'
-
+import { ParseTxtContent } from '../script/utils.js'
 
 export default {
   name: 'Project',
-  components: {
-    'images-box': Slider,
-    'text-box': TextBox,
-    'html-box': HTMLBox,
-    
-  },
 
   data() { return {
-    project: {}
+    project: {},
+    content: ""
   }},
 
   async created() 
@@ -25,7 +17,9 @@ export default {
       this.$router.push("/projects");
       return;
     }
+
     this.project = proj;
+    this.content = await ParseTxtContent(`/data/${proj.content}`);
   }
 }
 </script>
@@ -36,12 +30,9 @@ export default {
     <div class="proj-title">
       {{project.title}}
     </div>
-    <div class="project-content">
-      <component v-for="con in project.content" 
-        :key="con" 
-        :is="con.type" 
-        :conponent-data="con.data"
-      />
+    <div class="project-body">
+      <Slider v-if="project.slides" :slides="project.slides" />
+      <div class="project-content" v-html="content" />
     </div>
   </div>
 </template>
@@ -63,12 +54,17 @@ export default {
   color: var(--project-title-color);
 }
 
-.project-content {
+.project-body {
   width: 100%;
   padding: 15px;
   display: flex;
   flex-direction: column;
-  gap: 5px;
+}
+
+.project-content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
 }
 </style>
 
