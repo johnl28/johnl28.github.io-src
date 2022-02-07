@@ -1,4 +1,6 @@
 <script>
+
+// Navigation buttons
 let r = [
   {
     text: "Home",
