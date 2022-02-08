@@ -36,8 +36,8 @@ export default {
   <div class="project">
     <div class="proj-title">
       <!-- Back button -->
-      <button @click="GoBack()" class="icon-btn">
-        <span class="material-icons">arrow_back_ios</span>
+      <button @click="GoBack()" class="material-icons icon-btn">
+        clear
       </button>
       
       <!-- Project Title -->
