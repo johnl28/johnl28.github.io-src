@@ -20,7 +20,14 @@ export default {
 
     this.project = proj;
     this.content = await ParseTxtContent(`/data/${proj.content}`);
-  }
+  },
+
+  methods: {
+    GoBack() 
+    {
+      this.$router.go(-1);
+    }
+  },
 }
 </script>
 
@@ -28,12 +35,21 @@ export default {
 <template>
   <div class="project">
     <div class="proj-title">
+      <!-- Back button -->
+      <button @click="GoBack()" class="material-icons icon-btn">
+        clear
+      </button>
+      
+      <!-- Project Title -->
       {{project.title}}
     </div>
+
+    <!-- body -->
     <div class="project-body">
       <Slider v-if="project.slides" :slides="project.slides" />
       <div class="project-content" v-html="content" />
     </div>
+
   </div>
 </template>
 
@@ -52,6 +68,7 @@ export default {
   padding: 15px;
   font-weight: bold;
   color: var(--project-title-color);
+  gap: 10px;
 }
 
 .project-body {

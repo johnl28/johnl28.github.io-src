@@ -27,13 +27,14 @@ export default {
 }
 </script>
 
-
 <template>
-  <TheNavBar />
+  <TheNavBar></TheNavBar>
+
   <div class="content-box">
     <router-view class="box router" />
     <TheFooter />
   </div>
+
 </template>
 
 <style>
