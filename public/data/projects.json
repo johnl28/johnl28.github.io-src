@@ -10,13 +10,19 @@
 			"/data/otask/5ZGmNvW.png",
 			"/data/otask/eHweZil.png",
 			"/data/otask/Qub0u81.png"
-			
 		]
 	},
 	{ 
 		"id": 2,
 		"title": "QManager",
 		"desc": "A C++ aplication to personalise your windows desktop...",
-		"tags": ["#cpp", "#javascript","#cef", "#multithreading"]
+		"tags": ["#cpp", "#javascript","#cef", "#multithreading"],
+		"content": "/qmanager/page.txt",
+		"slides": [
+			"/data/qmanager/NDrorAS.png",
+			"/data/qmanager/5ZGmNvW.png",
+			"/data/qmanager/eHweZil.png",
+			"/data/qmanager/Qub0u81.png"
+		]
 	}
 ]

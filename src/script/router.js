@@ -4,20 +4,33 @@ const routes = [
   {
     path: '/',
     name: 'Home',
-    component: () => import('../views/Home.vue')
+    component: () => import('../views/Home.vue'),
+    meta: {
+      id: 0,
+      title: "Home"
+    }
   },
   {
     path: '/projects',
     name: 'Projects',
-    component: () => import('../views/Projects.vue')
+    component: () => import('../views/Projects.vue'),
+    meta: {
+      id: 1
+    }
   },
   {
     path: '/project/:id',
     name: 'Project',
-    component: () => import('../views/Project.vue')
+    component: () => import('../views/Project.vue'),
+    meta: {
+      id: 1
+    }
   },
   {
-    path: '/:pathMatch(.*)*', component: () => import('../views/404.vue')
+    path: '/:pathMatch(.*)*', component: () => import('../views/404.vue'),
+    meta: {
+      id: 99
+    }
   }
 
 ]

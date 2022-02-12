@@ -1,13 +1,16 @@
 [Text]
-Hello, my name is John I'm 22 and I like programming.
+Hello, my name is John I'm 22 and I do programming since I was 16.
 [/Text]
 
 ## Experience in:
+
 [List]
-C++/C (Socket I/O, Chromium, Boost, Python C++)
-Python (Flask, Redis)
-JavaScript (Vue.Js, JQuery, PixiJS)
-HTML,CSS
-Lua
-SQL
+<b>C++/C</b> (Socket I/O, Chromium, Boost, Python C++)
+<b>Python</b> (Flask, Redis, MariaDB)
+<b>JavaScript</b> (Vue.Js, JQuery, PixiJS)
+<b>C#</b>
+<b>HTML5,CSS</b>
+<b>Lua</b>
+<b>SQL</b>
+<b>FreeBSD, Linux, Windows</b>
 [/List]

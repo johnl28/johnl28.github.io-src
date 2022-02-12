@@ -1,11 +1,11 @@
 <script>
 import { ParseTxtContent } from '../script/utils.js'
-
+var data = {
+  content: ""
+}
 export default {
   name: 'Home',
-  data() { return {
-    content: ""
-  }},
+  data() { return data},
 
   async created() 
   {

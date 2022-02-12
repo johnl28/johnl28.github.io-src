@@ -30,23 +30,32 @@ export default {
   
   // methods
   methods: {
-    Navigate(to) 
+    UpdateActiveTab()
     {
-      if (this.currentRoute == to) {
+      setTimeout(() => { this.currentRoute  = this.$route.meta.id; }, 50)
+    },
+
+    Navigate(index, to) 
+    {
+      if (this.currentRoute == index) {
         return;
       }
-
-      this.currentRoute = to;
       this.$router.push(to);
+      this.UpdateActiveTab();
+      
     }
   },
+
+  mounted() { 
+    this.UpdateActiveTab();
+  }
 }
 </script>
 
 <template>
 
 <div class="box nav-bar-container">
-  <div :class="['nav-btn', { 'btn-active': currentRoute == route.to }]" v-for="route in routes" :key="route" @click="Navigate(route.to)">
+  <div v-for="(route, i) in routes" :key="i" @click="Navigate(index, route.to)" :class="['nav-btn', { 'btn-active': currentRoute == i }]">
     <span class="material-icons">
       {{route.span}}
     </span>
@@ -93,7 +102,7 @@ export default {
 }
 
 .nav-btn:hover {
-  background: rgb(241, 244, 255);
+  color: rgb(0, 0, 0);
 }
 
 .btn-active {
