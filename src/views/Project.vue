@@ -1,5 +1,6 @@
 <script>
-import { ParseTxtContent } from '../script/utils.js'
+// import { ParseTxtContent } from '../script/utils.js'
+var MarkdownIt = require('markdown-it');
 
 export default {
   name: 'Project',
@@ -12,14 +13,20 @@ export default {
   async created() 
   {
     var proj = await this.$root.GetProject(this.$route.params.id);
-    if(!proj) 
+    if(!proj)
     {
       this.$router.push("/projects");
       return;
     }
 
     this.project = proj;
-    this.content = await ParseTxtContent(`/data/${proj.content}`);
+    let t = new MarkdownIt();
+
+    let re = await fetch(`/data/${proj.content}`);
+    let text = await re.text();
+
+    this.content = t.render(text);
+    console.log(this.content);
   },
 
   methods: {
@@ -35,13 +42,13 @@ export default {
 <template>
   <div class="project">
     <div class="proj-title">
-      <!-- Back button -->
-      <button @click="GoBack()" class="material-icons icon-btn">
-        clear
-      </button>
-      
       <!-- Project Title -->
       {{project.title}}
+
+      <!-- Back button -->
+      <button @click="GoBack()" class="material-icons icon-btn red">
+        clear
+      </button>
     </div>
 
     <!-- body -->
@@ -61,6 +68,7 @@ export default {
 .proj-title {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   width: 100%;
   font-size: 20px;
   border-bottom: solid 1px var(--hoz-line-color);

@@ -80,6 +80,9 @@ button:active {
   justify-items: center; */
 }
 
+.red {
+  color: rgb(216, 0, 0);
+}
 
 @media screen and (max-width: 900px) {
   .box, .content-box {

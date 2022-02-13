@@ -83,6 +83,7 @@ export default {
   color: rgba(0, 0, 0, 0.356);
   font-size: 15px;
   border-top: rgba(0, 0, 0, 0.075) solid 1px;
+  font-weight: bold;
 }
 
 .nav-btn {
