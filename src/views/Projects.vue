@@ -1,15 +1,24 @@
 <script>
+import ArticleParser from '../script/ArticleParser'
+
 export default {
   name: 'Projects',
+
   data() { return {
-    projects: []
+    articles: {}
   }},
 
-  mounted()
+  methods: {
+    async InitiArticles()
+    {
+      let articleParser = new ArticleParser();
+      this.articles = await articleParser.FetchArticlesTable();
+    }
+  },
+
+  created()
   {
-    fetch('/data/projects.json')
-      .then(response => response.json())
-      .then(data => { this.projects = data; });
+    this.InitiArticles();
   }
 
 
@@ -20,17 +29,17 @@ export default {
 <template>
   <div class="projects">
     <div 
-      v-for="proj in projects" 
-      :key="proj" 
+      v-for="(article, id) in articles" 
+      :key="id" 
       class="project-row"
-      @click="$router.push(`/project/${proj.id}`)"
+      @click="$router.push(`/project/${id}`)"
     >
-      <a style="color: var(--project-title-color); font-weight: bold;">{{proj.title}}</a>
-      <div v-if="proj.desc" class="proj-desc">
-        {{proj.desc}}
+      <a style="color: var(--project-title-color); font-weight: bold;">{{article.title}}</a>
+      <div v-if="article.desc" class="proj-desc">
+        {{article.desc}}
       </div>
       <div class="proj-tags">
-        <i class="tag" v-for="tag in proj.tags" :key="tag">{{tag}}</i>
+        <i class="tag" v-for="tag in article.tags" :key="tag">{{tag}}</i>
       </div>
     </div>
   </div>

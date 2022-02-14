@@ -1,14 +1,12 @@
 import { createApp } from 'vue'
 import App from './App.vue'
 import router from './script/router.js'
-import CommonComps from './components/common/CommonComps.js'
-
-import Slider from './components/project/Slider.vue'
+import CommonComponents from './components/common/CommonComponents.js'
 
 import './assets/css/main.css'
+import './assets/css/markdown.css'
 
 var app = createApp(App);
-app.component("Slider", Slider);
 app.use(router);
-app.use(CommonComps);
+app.use(CommonComponents);
 app.mount('#app');

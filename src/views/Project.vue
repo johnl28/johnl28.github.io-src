@@ -1,34 +1,55 @@
 <script>
-import { GetProjectContent, GetProject } from '../script/ProjectParser.js'
+import ArticleParser from '../script/ArticleParser.js'
 
 export default {
   name: 'Project',
 
   data() { return {
-    project: {},
-    content: ""
+    dictData: {},
+    htmlContent: ""
   }},
-
-  async created() 
-  {
-    const projectId = this.$route.params.id;
-    var proj = await GetProject(projectId);
-
-    if(!proj) {
-      this.$router.push("/projects");
-      return;
-    }
-
-    this.project = proj;
-    this.content = GetProjectContent(projectId);
-  },
 
   methods: {
     GoBack() 
     {
       this.$router.go(-1);
+    },
+
+    async InitContent(id)
+    {
+      let articleParser = new ArticleParser();
+      this.htmlContent = await articleParser.GetArticleHTMLContent(id);
+    },
+
+    async InitData(id)
+    {
+      let articleParser = new ArticleParser();
+      var article = await articleParser.GetArticleTable(id);
+      if(!article) {
+        return false;
+      }
+      return true;
+    },
+
+    async InitPage()
+    {
+      const articleId = this.$route.params.id;
+
+      if(!await this.InitData(articleId)) {
+        return false;
+      }
+
+      this.InitContent(articleId);
+      return true;
     }
   },
+
+  async created() 
+  {
+    if(!await this.InitPage()) {
+      this.$router.push("/projects");
+    }
+  }
 }
 </script>
 
@@ -37,7 +58,7 @@ export default {
   <div class="project">
     <div class="proj-title">
       <!-- Project Title -->
-      {{project.title}}
+      {{dictData.title}}
 
       <!-- Back button -->
       <button @click="GoBack()" class="material-icons icon-btn red">
@@ -47,8 +68,8 @@ export default {
 
     <!-- body -->
     <div class="project-body">
-      <Slider v-if="project.slides" :slides="project.slides" />
-      <div class="project-content" v-html="content" />
+      <Slider v-if="dictData.slides" :slides="dictData.slides" />
+      <div class="project-content" v-html="htmlContent" />
     </div>
 
   </div>

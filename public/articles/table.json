@@ -1,10 +1,9 @@
-[
-	{ 
-		"id": 1,
+{
+	"orient_task": { 
 		"title": "OTask - Project & Task Manager",
 		"desc": "SPA for project and task management...",
 		"tags": ["#flask", "#vuejs", "#mariadb", "#redis"],
-		"content": "/otask/page.txt",
+		"content": "/otask/page.md",
 		"slides": [
 			"/data/otask/NDrorAS.png",
 			"/data/otask/5ZGmNvW.png",
@@ -12,12 +11,12 @@
 			"/data/otask/Qub0u81.png"
 		]
 	},
-	{ 
-		"id": 2,
+
+	"qmanager": { 
 		"title": "QManager",
 		"desc": "A C++ aplication to personalise your windows desktop...",
 		"tags": ["#cpp", "#javascript","#cef", "#multithreading"],
-		"content": "/qmanager/page.txt",
+		"content": "/qmanager/page.md",
 		"slides": [
 			"/data/qmanager/NDrorAS.png",
 			"/data/qmanager/5ZGmNvW.png",
@@ -25,4 +24,4 @@
 			"/data/qmanager/Qub0u81.png"
 		]
 	}
-]
+}

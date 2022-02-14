@@ -1,0 +1,22 @@
+
+:root {
+  --blockquote-color: rgb(221, 255, 202);
+  --blockquote-border-color: rgb(88, 148, 53);
+
+  --code-box-color: rgb(209, 255, 183);
+  --code-color: rgb(74, 165, 0);
+}
+
+code {
+  background-color: var(--code-box-color);
+  color: var(--code-color);
+  /* padding: 1px; */
+  padding-inline: 5px;
+  border-radius: 5px;
+}
+
+blockquote {
+  background-color: var(--blockquote-color);
+  border-left: solid 5px var(--blockquote-border-color);
+  padding-left: 10px;
+}

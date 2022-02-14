@@ -1,22 +1,23 @@
 <script>
-import { ParseTxtContent } from '../script/ProjectParser.js'
+import ArticleParser from '../script/ArticleParser.js'
+import constants from '../script/constants.js'
 
-var data = {
-  content: ""
-}
 export default {
   name: 'Home',
-  data() { return data},
+  data() { return {
+    htmlContent: ""
+  }},
 
   async created() 
   {
-    this.content = await ParseTxtContent(`/data/home.txt`);
+    let articleParser = new ArticleParser();
+    this.htmlContent = await articleParser.FetchMarkDownFile(`/${constants.root_dir}/home.md`);
   }
 }
 </script>
 
 
 <template>
-  <div class="home" v-html="content"></div>
+  <div class="home" v-html="htmlContent"></div>
 </template>
 

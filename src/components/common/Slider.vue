@@ -1,5 +1,5 @@
 <script>
-import PopUp from '../common/PopUp.vue';
+import PopUp from './PopUp.vue';
 export default {
   components: { PopUp },
   name: 'ImageSlider',
