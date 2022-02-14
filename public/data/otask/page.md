@@ -1,14 +1,8 @@
 --------------------
 
-<<<<<<< Updated upstream:public/data/otask/page.txt
 [Text]
 QManager is a C++ and JavaScript application for Windows Desktop personalisation. 
 It uses Chromium Embedded Framework for UI rendering and Windows API for detecting user's interaction with the Desktop.
-=======
-
-> QManager is a C++ and JavaScript application for Windows Desktop personalisation. 
-It uses Chromium Embedded Framework for UI rendering and Windows API for detecting user's inputs.
->>>>>>> Stashed changes:public/data/otask/page.md
 
 
 
@@ -25,13 +19,8 @@ The Desktop Manager Thread will:
   - Check if the focused window is "WorkerW".
   - Check if the pressed key matches with the one chosen by the user.
   
-<<<<<<< Updated upstream:public/data/otask/page.txt
 If the above cases are <b>True</b> at the same time, the time will be reseted and the <b>Main Process</b> will send a packet to the <b>Render Process</b> to update the UI bar.
 When the time is up without detecting the key press on "WorkerW" window, "SysListView32" will be hidden.
-=======
-If the above cases are <b>True</b> at the same time, the time will be reseted and the <b>Main Process</b> sends a packet to the <b>Render Process</b> to update the UI bar.
-```
->>>>>>> Stashed changes:public/data/otask/page.md
 [/Text]
 [/]
 [img] auto, 100%, /data/otask/2Pe35vj.png

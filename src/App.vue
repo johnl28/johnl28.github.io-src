@@ -3,22 +3,10 @@ import TheNavBar from './components/static/TheNavBar.vue'
 import TheFooter from './components/static/TheFooter.vue'
 
 export default {
-  name: "AppComponent",
+  name: "TheAppComponent",
   components: { TheNavBar, TheFooter },
   methods: {
-    async GetProject(id)
-    {
-      let res = await fetch('/data/projects.json');
-      let projects = await res.json();
 
-      for(let i in projects)
-      {
-        if (projects[i].id == id) {
-          return projects[i];
-        }
-      }
-      return null;
-    }
   },
 
   created() {

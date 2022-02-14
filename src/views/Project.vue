@@ -1,6 +1,5 @@
 <script>
-// import { ParseTxtContent } from '../script/utils.js'
-var MarkdownIt = require('markdown-it');
+import { GetProjectContent, GetProject } from '../script/ProjectParser.js'
 
 export default {
   name: 'Project',
@@ -12,21 +11,16 @@ export default {
 
   async created() 
   {
-    var proj = await this.$root.GetProject(this.$route.params.id);
-    if(!proj)
-    {
+    const projectId = this.$route.params.id;
+    var proj = await GetProject(projectId);
+
+    if(!proj) {
       this.$router.push("/projects");
       return;
     }
 
     this.project = proj;
-    let t = new MarkdownIt();
-
-    let re = await fetch(`/data/${proj.content}`);
-    let text = await re.text();
-
-    this.content = t.render(text);
-    console.log(this.content);
+    this.content = GetProjectContent(projectId);
   },
 
   methods: {

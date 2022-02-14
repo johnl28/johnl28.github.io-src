@@ -1,5 +1,6 @@
 <script>
-import { ParseTxtContent } from '../script/utils.js'
+import { ParseTxtContent } from '../script/ProjectParser.js'
+
 var data = {
   content: ""
 }
