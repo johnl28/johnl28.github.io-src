@@ -1,8 +1,9 @@
-
+import Slider from './Slider.vue'
+import PopUp from './PopUp.vue'
 
 const components = {
-  "popUp": () => import('./PopUp.vue'),
-  "Slider": () => import('./Slider.vue')
+  "PopUp": PopUp,
+  "ImagesSlider": Slider
 }
 
 
@@ -19,7 +20,7 @@ export default {
     for (let componentKey in components)
     {
       let component = components[componentKey];
-      this.appendComponent(component);
+      this.appendComponent(componentKey, component);
     }
   },
 

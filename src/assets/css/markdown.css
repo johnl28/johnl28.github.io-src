@@ -1,7 +1,7 @@
 
 :root {
-  --blockquote-color: rgb(221, 255, 202);
-  --blockquote-border-color: rgb(88, 148, 53);
+  --blockquote-color: rgb(230, 255, 215);
+  --blockquote-border-color: rgba(53, 145, 0, 0.671);
 
   --code-box-color: rgb(209, 255, 183);
   --code-color: rgb(74, 165, 0);

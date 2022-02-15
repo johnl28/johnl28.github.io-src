@@ -5,10 +5,10 @@
 		"tags": ["#flask", "#vuejs", "#mariadb", "#redis"],
 		"content": "/otask/page.md",
 		"slides": [
-			"/data/otask/NDrorAS.png",
-			"/data/otask/5ZGmNvW.png",
-			"/data/otask/eHweZil.png",
-			"/data/otask/Qub0u81.png"
+			"/articles/otask/pictures/NDrorAS.png",
+			"/articles/otask/pictures/5ZGmNvW.png",
+			"/articles/otask/pictures/eHweZil.png",
+			"/articles/otask/pictures/Qub0u81.png"
 		]
 	},
 
@@ -18,10 +18,10 @@
 		"tags": ["#cpp", "#javascript","#cef", "#multithreading"],
 		"content": "/qmanager/page.md",
 		"slides": [
-			"/data/qmanager/NDrorAS.png",
-			"/data/qmanager/5ZGmNvW.png",
-			"/data/qmanager/eHweZil.png",
-			"/data/qmanager/Qub0u81.png"
+			"/articles/qmanager/pictures/NDrorAS.png",
+			"/articles/qmanager/pictures/5ZGmNvW.png",
+			"/articles/qmanager/pictures/eHweZil.png",
+			"/articles/qmanager/pictures/Qub0u81.png"
 		]
 	}
 }

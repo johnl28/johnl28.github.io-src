@@ -1,8 +1,7 @@
 <script>
-import PopUp from './PopUp.vue';
+
 export default {
-  components: { PopUp },
-  name: 'ImageSlider',
+  name: 'ImagesSlider',
   props: ["slides"],
 
   // methods
@@ -16,9 +15,18 @@ export default {
   // data
   data() { return {
     selected: 0,
-    popUrl: ""
+    popUrl: "",
   }},
   
+  mounted() {
+    console.log(this.slides);
+  },
+
+  computed: {
+    currentPicture() {
+      return this.slides[this.selected];
+    }
+  }
 }
 </script>
 
@@ -27,7 +35,7 @@ export default {
   <img 
     @click="FullScreen"
     class="slider-img"
-    :src="slides[selected]" 
+    :src="currentPicture" 
    />
   <div class="images-list">
     <img 

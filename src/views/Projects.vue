@@ -20,8 +20,6 @@ export default {
   {
     this.InitiArticles();
   }
-
-
 }
 </script>
 
@@ -67,7 +65,6 @@ export default {
 }
 
 .project-row:hover {
-  
   border-color: rgb(110, 110, 110);
 }
 

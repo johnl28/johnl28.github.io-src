@@ -28,6 +28,9 @@ export default {
       if(!article) {
         return false;
       }
+
+      this.dictData = article;
+      console.log(this.dictData);
       return true;
     },
 
@@ -44,7 +47,7 @@ export default {
     }
   },
 
-  async created() 
+  async mounted() 
   {
     if(!await this.InitPage()) {
       this.$router.push("/projects");
@@ -68,7 +71,7 @@ export default {
 
     <!-- body -->
     <div class="project-body">
-      <Slider v-if="dictData.slides" :slides="dictData.slides" />
+      <images-slider v-if="dictData.slides" :slides="dictData.slides" />
       <div class="project-content" v-html="htmlContent" />
     </div>
 

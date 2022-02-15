@@ -1,10 +1,11 @@
 <script>
 import TheNavBar from './components/static/TheNavBar.vue'
 import TheFooter from './components/static/TheFooter.vue'
+import TheLoadingBox from './components/static/TheLoadingBox.vue'
 
 export default {
   name: "TheAppComponent",
-  components: { TheNavBar, TheFooter },
+  components: { TheNavBar, TheFooter, TheLoadingBox },
   methods: {
 
   },
@@ -17,9 +18,9 @@ export default {
 
 <template>
   <TheNavBar></TheNavBar>
-
-  <div class="content-box">
+  <div class="middle-box">
     <router-view class="box router" />
+    <TheLoadingBox class="box router" />
     <TheFooter />
   </div>
 
@@ -40,7 +41,7 @@ export default {
   min-height: 300px;
 }
 
-.content-box {
+.middle-box {
   display: flex;
   flex-direction: column;
   min-width: 600px;
